@@ -19,3 +19,7 @@
 .counter {
   float: right;
 }
+
+.too-long {
+  color: #ff0000;
+}
