@@ -2,7 +2,7 @@ const MAX_LENGTH = 140;
 
 $(document).ready(() => {
   const inputBox = $(".new-tweet").find("form textarea");
-  inputBox.on("keyup", function () {
+  inputBox.on("keyup keypress", function () {
     const counter = $(this).parents("form").children(".counter");
     let value = MAX_LENGTH - $(this).val().length;
     counter.text(value);
