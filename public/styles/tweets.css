@@ -6,6 +6,7 @@ article.tweet {
   border-radius: 5pt;
   border: 1pt solid #00a087;
   overflow: hidden;
+  margin-bottom: 1em;
 }
 
 article.tweet header {
@@ -19,6 +20,7 @@ article.tweet header .avatar {
   height: 50px;
   width: 50px;
   float: left;
+  border-radius: 3pt;
 }
 
 article.tweet header .author {
@@ -59,9 +61,9 @@ article.tweet:hover footer .icons {
 }
 
 article.tweet:hover {
-  border: 2pt solid #00a087;
+  border: 1.5pt solid #00a087;
 }
 
 article.tweet:hover footer {
-  border-top: 2pt solid #00a087;
+  border-top: 1.5pt solid #00a087;
 }

@@ -21,6 +21,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/form-submission.js"></script>
   </head>
 
   <body>
@@ -32,7 +33,7 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="tweet-container">
         <section class="new-tweet">
           <h2>Compose Tweet</h2>
           <form action="/tweets" method="POST">
@@ -42,23 +43,7 @@
           </form>
         </section>
         <div id="tweets">
-            <article class="tweet">
-                <header>
-                    <img class="avatar" src="/images/bird.png">
-                    <span class="author">Bill Fields</span><span class="username">@MrFields</span>
-                </header>
-                <section>
-                    <p>This is an example tweet</p>
-                </section>
-                <footer>
-                    10 Days Ago
-                    <span class="icons">
-                        <i class="fa fa-flag fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-retweet fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
-                    </span>
-                </footer>
-            </article>
+
         </div>
     </main>
 
