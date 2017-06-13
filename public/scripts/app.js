@@ -9,7 +9,7 @@ const createTweetElement = (tweet) => {
   `);
 
   //body
-  let tweetBody = $("<section>").append(`<p>${tweet.content.text}</p>`);
+  let tweetBody = $("<section>").append("<p>").text(tweet.content.text);
 
   //footer
   let tweetFooter = $("<footer>").append(`
