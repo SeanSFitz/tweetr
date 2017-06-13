@@ -6,13 +6,14 @@ article.tweet {
   border-radius: 5px;
   border: 1px solid #00a087;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 article.tweet header {
   background-color: #00a087;
   color: #ffffff;
   overflow: auto;
+  padding: 5px;
 }
 
 article.tweet header .avatar {
@@ -36,15 +37,16 @@ article.tweet header .username {
 }
 
 article.tweet section {
-  padding: 3px;
+  padding: 10px;
   margin: 0px;
 }
 
 article.tweet footer {
   border-top: 1px solid #00a087;
-  padding: 7px;
+  padding: 10px;
   font-size: 0.5em;
   color: #00a087;
+  height: 40px;
 }
 
 article.tweet footer .icons {
@@ -61,10 +63,23 @@ article.tweet:hover footer .icons {
 }
 
 article.tweet:hover {
-  border: 1.5px solid #00a087;
-  margin-bottom: 8.5px;
+  border: 3px solid #00a087;
+  margin-bottom: 18px;
 }
 
 article.tweet:hover footer {
-  border-top: 1.5px solid #00a087;
+  border-top: 3px solid #00a087;
 }
+
+article.tweet:hover header {
+  padding: 3px 3px 5px 3px;
+}
+
+article.tweet:hover section {
+  padding: 10px 8px 10px 8px;
+}
+
+article.tweet:hover footer {
+  padding: 8px 8px 8px 8px;
+}
+
