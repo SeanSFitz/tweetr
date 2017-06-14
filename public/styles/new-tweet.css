@@ -17,10 +17,30 @@
 
 }
 
+.new-tweet input {
+  border-radius: 3px;
+  background-color: white;
+  border: 0;
+}
+
+.new-tweet input:hover {
+  color: #00a087;
+  /* border: 2px solid rgba(0, 160, 135, 0.67); */
+}
+
 .counter {
   float: right;
+  color: white;
 }
 
 .too-long {
-  color: #ff0000;
+  color: #C14242;
+}
+
+.warning {
+  font-size: 0.75em;
+  color: #C14242;
+  font-weight: 300;
+  margin-left: 10px;
+  display: none;
 }

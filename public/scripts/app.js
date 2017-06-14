@@ -43,6 +43,15 @@ const formSubmitHandler = () => {
   composeForm.on("submit", function (event) {
     event.preventDefault();
 
+    let tweetText = $(this).find("textarea").val();
+    if (tweetText === ""  || tweetText === null) {
+      displayWarning("TWEET IS EMPTY!");
+      return;
+    } else if (tweetText.length > 140){
+      displayWarning("TWEET IS TOO LONG!");
+      return;
+    }
+
     //ajax below
     $.ajax({
       url: "/tweets",
@@ -58,6 +67,12 @@ const formSubmitHandler = () => {
 
 }
 
+const displayWarning = (warning) => {
+   $(".new-tweet").find(".warning").text(warning).show();
+   setTimeout(() => {
+    $(".new-tweet").find(".warning").hide();
+   }, 3000);
+}
 
 const appendLatest = (tweet) => {
   $("#tweets").prepend(createTweetElement(tweet));
