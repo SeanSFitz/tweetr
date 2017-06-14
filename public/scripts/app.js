@@ -110,12 +110,10 @@ const composeToggle = () => {
 const timestampToggle = () => {
   //display full date if user hovers over timestamp
   $("#tweets").on("mouseenter", ".timestamp", function () {
-    console.log("mouse in");
     $(this).find(".time-date, .time-since").toggle({duration: 200});
   });
   //reverts timestamp to time-since format
   $("#tweets").on("mouseleave", ".timestamp", function () {
-    console.log("mouse out");
     $(this).find(".time-date, .time-since").toggle({duration: 200});
   });
 }
