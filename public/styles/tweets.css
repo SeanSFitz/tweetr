@@ -49,6 +49,15 @@ article.tweet footer {
   height: 40px;
 }
 
+article.tweet footer .timestamp .time-date {
+  display: none;
+}
+
+article.tweet footer .timestamp .time-since {
+
+}
+
+
 article.tweet footer .icons {
   display: none;
   float: right;

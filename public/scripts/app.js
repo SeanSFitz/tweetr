@@ -1,4 +1,5 @@
 const createTweetElement = (tweet) => {
+  //create new tweet article element, create the header, body and footer and append all to article
   let $tweet = $("<article>").addClass("tweet");
 
   //header
@@ -12,8 +13,12 @@ const createTweetElement = (tweet) => {
   let tweetBody = $("<section>").append("<p>").text(tweet.content.text);
 
   //footer
+  let dateCreated = new Date(tweet.created_at);
   let tweetFooter = $("<footer>").append(`
-    10 Days Ago
+      <span class="timestamp">
+        <span class="time-since">${moment(dateCreated).fromNow()}</span>
+        <span class="time-date">${moment(dateCreated)}</span>
+      </span>
       <span class="icons">
           <i class="fa fa-flag fa-2x" aria-hidden="true"></i>
           <i class="fa fa-retweet fa-2x" aria-hidden="true"></i>
@@ -31,18 +36,18 @@ const createTweetElement = (tweet) => {
 }
 
 const renderTweets = (tweetData) => {
+  //loops through tweets and appends to the tweets container
   for (let tweet of tweetData) {
     $("#tweets").append(createTweetElement(tweet));
   }
 }
 
 const formSubmitHandler = () => {
-
   const composeForm = $(".new-tweet").find("form");
-
+  //event listener for form submission
   composeForm.on("submit", function (event) {
     event.preventDefault();
-
+    //check textarea to see if the input is valid, if not call the displayWarning function and stop execution
     let tweetText = $(this).find("textarea").val();
     if (tweetText === ""  || tweetText === null) {
       displayWarning("TWEET IS EMPTY!");
@@ -51,8 +56,7 @@ const formSubmitHandler = () => {
       displayWarning("TWEET IS TOO LONG!");
       return;
     }
-
-    //ajax below
+    //ajax post request sends tweet to server and upon success, calls appendLatest to display the tweet on the page
     $.ajax({
       url: "/tweets",
       method: "POST",
@@ -68,6 +72,7 @@ const formSubmitHandler = () => {
 }
 
 const displayWarning = (warning) => {
+  //display custom warning text next to the tweet button and then have it dissapear after a set time
    $(".new-tweet").find(".warning").text(warning).show();
    setTimeout(() => {
     $(".new-tweet").find(".warning").hide();
@@ -75,10 +80,12 @@ const displayWarning = (warning) => {
 }
 
 const appendLatest = (tweet) => {
+  //append the just created tweet to the top of the tweets container
   $("#tweets").prepend(createTweetElement(tweet));
 }
 
 const loadTweets = () => {
+  //fetch all tweets from server and call render tweets function upon success
   $.ajax({
     url: "/tweets",
     method: "GET",
@@ -89,6 +96,7 @@ const loadTweets = () => {
 }
 
 const composeToggle = () => {
+  //toggle the new tweet form when the user hits the "compose" button
   $("#compose").on("click", function () {
     $(".new-tweet").toggle({
       duration: 500,
@@ -99,10 +107,24 @@ const composeToggle = () => {
   });
 }
 
+const timestampToggle = () => {
+  //display full date if user hovers over timestamp
+  $("#tweets").on("mouseenter", ".timestamp", function () {
+    console.log("mouse in");
+    $(this).find(".time-date, .time-since").toggle({duration: 200});
+  });
+  //reverts timestamp to time-since format
+  $("#tweets").on("mouseleave", ".timestamp", function () {
+    console.log("mouse out");
+    $(this).find(".time-date, .time-since").toggle({duration: 200});
+  });
+}
+
 $(document).ready(() => {
   loadTweets();
   formSubmitHandler();
   composeToggle();
+  timestampToggle();
 });
 
 

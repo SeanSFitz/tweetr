@@ -4,7 +4,7 @@
   height: 80px;
   width: 100%;
   background-color: #00a087;
-  color: #e8fdff;
+  color: #FFFFFF;
   padding-left: 2em;
   padding-right: 2em;
   z-index: 1;
@@ -49,6 +49,9 @@
 
 #nav-bar .nav-inputs button:hover {
   color: #00a087;
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-offset: -1px;
+  outline-color: rgba(170, 237, 204, 0.2);
 }
 
 #nav-bar .nav-inputs button i{
@@ -63,6 +66,10 @@
   border-radius: 2px;
 }
 
-#compose {
-
+#nav-bar .nav-inputs input:hover {
+  outline-offset: -2px;
+  outline: -webkit-focus-ring-color auto 5px;
 }
+
+
+.invert {-webkit-filter: invert(100%); filter: invert(100%);}

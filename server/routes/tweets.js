@@ -1,6 +1,7 @@
 "use strict";
 
-const userHelper    = require("../lib/util/user-helper")
+const userHelper    = require("../lib/util/user-helper");
+const moment        = require('moment-timezone');
 
 const express       = require('express');
 const tweetsRoutes  = express.Router();
@@ -29,7 +30,7 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: Date.now()
+      created_at: moment.tz("America/Toronto")
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
