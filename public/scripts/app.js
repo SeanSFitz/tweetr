@@ -1,5 +1,6 @@
 const createTweetElement = (tweet) => {
   //create new tweet article element, create the header, body and footer and append all to article
+  console.log(tweet);
   let $tweet = $("<article>").addClass("tweet");
 
   //header

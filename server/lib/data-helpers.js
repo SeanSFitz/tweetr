@@ -8,9 +8,8 @@ module.exports = function makeDataHelpers(db) {
   return {
     // Saves a tweet to `db`
     saveTweet: function(newTweet, callback) {
-      simulateDelay(() => {
-        db.tweets.push(newTweet);
-        callback(null, true);
+      db.collection("tweets").insertOne(newTweet, (err) => {
+        callback(err);
       });
     },
 
@@ -20,7 +19,9 @@ module.exports = function makeDataHelpers(db) {
         if (err) {
           return callback(err);
         }
-        callback(null, tweets);
+        callback(null, tweets.sort((a, b) => {
+          return b.created_at - a.created_at;
+        }));
       });
     }
 
