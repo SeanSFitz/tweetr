@@ -21,6 +21,7 @@ const createTweetElement = (tweet) => {
         <span class="time-date">${moment(dateCreated)}</span>
       </span>
       <span class="icons">
+          <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
           <i class="fa fa-flag fa-2x" aria-hidden="true"></i>
           <i class="fa fa-retweet fa-2x" aria-hidden="true"></i>
           <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
