@@ -88,9 +88,18 @@ const loadTweets = () => {
   })
 }
 
+const composeToggle = () => {
+  $("#compose").on("click", function () {
+    $(".new-tweet").toggle({
+      duration: 500
+    });
+  });
+}
+
 $(document).ready(() => {
   loadTweets();
   formSubmitHandler();
+  composeToggle();
 });
 
 
