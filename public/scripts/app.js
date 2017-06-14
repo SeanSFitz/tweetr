@@ -91,7 +91,10 @@ const loadTweets = () => {
 const composeToggle = () => {
   $("#compose").on("click", function () {
     $(".new-tweet").toggle({
-      duration: 500
+      duration: 500,
+      done: () => {
+        $(".new-tweet").is(":hidden") ? '' : $(".new-tweet textarea").focus() ;
+      }
     });
   });
 }
