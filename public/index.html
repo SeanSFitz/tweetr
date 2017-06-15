@@ -34,10 +34,14 @@
       <div class="nav-inputs">
         <button id="compose"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Compose</button>
         <div class="login-controls">
-          <input class="" type="username" type="text" name="login-username" placeholder="Username">
-          <input class="" type="password" type="text" name="login-password" placeholder="Password">
-          <button>Login</button>
-          <button id="register-nav">Register</button>
+          <div class="logged-out">
+            <form action="/users/login" method="POST">
+              <input class="" type="username" type="text" name="loginUsername" placeholder="Username">
+              <input class="" type="password" type="text" name="loginPassword" placeholder="Password">
+              <button id="login-nav" type="submit">Login</button>
+              <button id="register-nav">Register</button>
+            </form>
+          </div>
         </div>
       </div>
     </nav>
@@ -47,10 +51,11 @@
 
         <div id="registration">
           <h2>Register</h2>
-          <form action="/users" method="POST">
+          <form action="/users/register" method="POST">
             <input type="text" class="text-inputs" name="username" placeholder="Username">
             <input type="password" class="text-inputs" name="password" placeholder="Password">
             <input type="text" class="text-inputs" name="name" placeholder="Full Name">
+            <input type="text" class="text-inputs" name="avatarUrl" placeholder="Avatar URL">
             <input type="submit" value="Register">
           </form>
         </div>

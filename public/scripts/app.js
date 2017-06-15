@@ -1,6 +1,5 @@
 const createTweetElement = (tweet) => {
   //create new tweet article element, create the header, body and footer and append all to article
-  console.log(tweet);
   let $tweet = $(`<article data-tweetID="${tweet._id}">`).addClass("tweet");
 
   //header
@@ -44,6 +43,11 @@ const renderTweets = (tweetData) => {
   }
 }
 
+const clearTweets = () => {
+  //removes all tweets aka all children of the #tweets div
+  $("#tweets").empty();
+}
+
 const formSubmitHandler = () => {
   const composeForm = $(".new-tweet").find("form");
   //event listener for form submission
@@ -58,6 +62,7 @@ const formSubmitHandler = () => {
       displayWarning("TWEET IS TOO LONG!");
       return;
     }
+
     //ajax post request sends tweet to server and upon success, calls appendLatest to display the tweet on the page
     $.ajax({
       url: "/tweets",
@@ -66,7 +71,7 @@ const formSubmitHandler = () => {
       success: (response) => {
         composeForm.find("textarea").val("");
         $(".new-tweet form .counter").text(140);
-        appendLatest(response);
+        loadTweets();
       }
     });
   });
@@ -92,6 +97,7 @@ const loadTweets = () => {
     url: "/tweets",
     method: "GET",
     success: function (data) {
+      clearTweets();
       renderTweets(data);
     }
   })
@@ -142,6 +148,8 @@ $(document).ready(() => {
   composeToggle();
   timestampToggle();
   deleteButtonHandler();
+
+  //setInterval(loadTweets, 2000);
 });
 
 

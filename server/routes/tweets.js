@@ -33,11 +33,11 @@ module.exports = function(DataHelpers) {
       created_at: Date.now()
     };
 
-    DataHelpers.saveTweet(tweet, (err) => {
+    DataHelpers.saveTweet(tweet, (err, newTweet) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.status(201).send(tweet);
+        res.status(201).send(newTweet);
       }
     });
   });
