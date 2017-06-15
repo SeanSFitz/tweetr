@@ -42,6 +42,16 @@ module.exports = function(DataHelpers) {
     });
   });
 
+  tweetsRoutes.delete("/:tweetID", function(req, res) {
+    DataHelpers.deleteTweet(req.params.tweetID, (err) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(201).send();
+      }
+    });
+  });
+
   return tweetsRoutes;
 
 }

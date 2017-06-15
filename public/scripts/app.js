@@ -1,7 +1,7 @@
 const createTweetElement = (tweet) => {
   //create new tweet article element, create the header, body and footer and append all to article
   console.log(tweet);
-  let $tweet = $("<article>").addClass("tweet");
+  let $tweet = $(`<article data-tweetID="${tweet._id}">`).addClass("tweet");
 
   //header
   let tweetHeader = $("<header>").append(`
@@ -120,11 +120,26 @@ const timestampToggle = () => {
   });
 }
 
+const deleteButtonHandler = () => {
+  $("#tweets").on("click", ".fa-trash", function () {
+    const tweetID = $(this).closest(".tweet").data("tweetid");
+
+    $.ajax({
+      url: `/tweets/${tweetID}`,
+      method: "DELETE",
+      success: function () {
+        console.log("Browser thinks it works");
+      }
+    });
+  });
+}
+
 $(document).ready(() => {
   loadTweets();
   formSubmitHandler();
   composeToggle();
   timestampToggle();
+  deleteButtonHandler();
 });
 
 
