@@ -36,6 +36,31 @@
       float: right;
     }
 
+    .logged-in {
+
+      display: none;
+
+      .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 3px;
+        float: left;
+        margin-top: 10px;
+        margin-right: 15px;
+      }
+
+      span {
+        float: left;
+        margin-top: 30px;
+        margin-right: 15px;
+      }
+    }
+
+
+    .logged-out {
+      //display: none;
+    }
+
     button {
       height: 50px;
       width: 100px;

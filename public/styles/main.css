@@ -52,6 +52,19 @@ body {
     display: table; }
     #nav-bar .nav-inputs .login-controls {
       float: right; }
+    #nav-bar .nav-inputs .logged-in {
+      display: none; }
+      #nav-bar .nav-inputs .logged-in .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 3px;
+        float: left;
+        margin-top: 10px;
+        margin-right: 15px; }
+      #nav-bar .nav-inputs .logged-in span {
+        float: left;
+        margin-top: 30px;
+        margin-right: 15px; }
     #nav-bar .nav-inputs button {
       height: 50px;
       width: 100px;
@@ -148,7 +161,8 @@ article.tweet {
       margin: 5px 2px; }
   article.tweet section {
     padding: 10px;
-    margin: 0px; }
+    margin: 0px;
+    word-wrap: break-word; }
   article.tweet footer {
     border-top: 1px solid #1F7698;
     padding: 10px;
