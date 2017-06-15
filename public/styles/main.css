@@ -1,0 +1,217 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+ * Global layout stuff
+ */
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  font-family: 'Roboto', sans-serif; }
+
+.tweet-container {
+  background-color: #ffffff;
+  width: 450px;
+  margin: 0 auto;
+  padding: 100px 0 30px; }
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background-color: #00a087;
+  color: #FFFFFF;
+  padding-left: 2em;
+  padding-right: 2em;
+  z-index: 1; }
+
+#nav-bar .nav-header {
+  float: left;
+  width: 20%; }
+
+#nav-bar .logo {
+  width: 80px;
+  height: 80px; }
+
+#nav-bar .header {
+  position: fixed;
+  top: 0;
+  font-size: 2em;
+  margin-left: 10px;
+  line-height: 80px; }
+
+#nav-bar .nav-inputs {
+  height: 100%;
+  width: 80%;
+  display: table; }
+
+#nav-bar .nav-inputs .login-controls {
+  float: right; }
+
+#nav-bar .nav-inputs button {
+  height: 50px;
+  width: 100px;
+  margin: 15px 15px 15px 0px;
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: 2px; }
+
+#nav-bar .nav-inputs button:hover {
+  color: #00a087;
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-offset: -1px;
+  outline-color: rgba(170, 237, 204, 0.2); }
+
+#nav-bar .nav-inputs button i {
+  margin-right: 3px; }
+
+#nav-bar .nav-inputs input {
+  width: 200px;
+  height: 25px;
+  margin-right: 15px;
+  border: 0;
+  border-radius: 2px; }
+
+#nav-bar .nav-inputs input:hover {
+  outline-offset: -2px;
+  outline: -webkit-focus-ring-color auto 5px; }
+
+.invert {
+  -webkit-filter: invert(100%);
+  filter: invert(100%); }
+
+.new-tweet {
+  background-color: #00a087;
+  margin-right: 2em;
+  margin-left: 2em;
+  border-radius: 5pt;
+  padding: 5pt;
+  display: none; }
+
+.new-tweet h2 {
+  color: #ffffff;
+  border-bottom: 1px solid white; }
+
+.new-tweet textarea {
+  width: 100%;
+  border-radius: 2pt;
+  border: 0;
+  margin-bottom: 5px; }
+
+.new-tweet textarea:hover {
+  outline-offset: -2px;
+  outline: -webkit-focus-ring-color auto 5px; }
+
+.new-tweet input {
+  border-radius: 3px;
+  background-color: white;
+  border: 0; }
+
+.new-tweet input:hover {
+  color: #00a087;
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-offset: -1px;
+  outline-color: rgba(170, 237, 204, 0.2); }
+
+.counter {
+  float: right;
+  color: white; }
+
+.too-long {
+  color: #C14242; }
+
+.warning {
+  font-size: 0.75em;
+  color: #C14242;
+  font-weight: 700;
+  margin-left: 10px;
+  display: none; }
+
+#tweets {
+  margin: 30px 2em 10px 2em; }
+
+article.tweet {
+  border-radius: 5px;
+  border: 1px solid #00a087;
+  overflow: hidden;
+  margin-bottom: 20px; }
+
+article.tweet header {
+  background-color: #00a087;
+  color: #ffffff;
+  overflow: auto;
+  padding: 5px; }
+
+article.tweet header .avatar {
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+  float: left;
+  border-radius: 3px; }
+
+article.tweet header .author {
+  font-size: 2em;
+  font-weight: 700;
+  float: left; }
+
+article.tweet header .username {
+  float: right;
+  font-size: 0.75em;
+  margin: 5px 2px; }
+
+article.tweet section {
+  padding: 10px;
+  margin: 0px; }
+
+article.tweet footer {
+  border-top: 1px solid #00a087;
+  padding: 10px;
+  font-size: 0.5em;
+  color: #00a087;
+  height: 40px; }
+
+article.tweet footer .timestamp .time-date {
+  display: none; }
+
+article.tweet footer .icons {
+  display: none;
+  margin-top: 2px;
+  float: right; }
+
+article.tweet footer .icons i {
+  margin-right: 3px; }
+
+article.tweet:hover footer .icons {
+  display: inherit; }
+
+article.tweet:hover {
+  border: 3px solid #00a087;
+  margin-bottom: 18px; }
+
+article.tweet:hover footer {
+  border-top: 3px solid #00a087; }
+
+article.tweet:hover header {
+  padding: 3px 3px 5px 3px; }
+
+article.tweet:hover section {
+  padding: 10px 8px 10px 8px; }
+
+article.tweet:hover footer {
+  padding: 8px 8px 8px 8px; }
+
+.icons i:hover {
+  color: red;
+  cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */
