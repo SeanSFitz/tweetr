@@ -1,26 +1,15 @@
-.new-tweet {
+#registration {
   background-color: $main-color;
   margin-right: 2em;
   margin-left: 2em;
   border-radius: 5pt;
   padding: 5pt;
+  text-align: center;
   display: none;
 
   h2 {
     color: #ffffff;
     border-bottom: 1px solid white;
-  }
-
-  textarea {
-    width: 100%;
-    border-radius: 2pt;
-    border: 0;
-    margin-bottom: 5px;
-
-    &:hover {
-      outline-offset: -2px;
-      outline: -webkit-focus-ring-color auto 5px;
-    }
   }
 
   input {
@@ -34,22 +23,13 @@
       outline-offset: -1px;
       outline-color: rgba(170, 237, 204, 0.2);
     }
+
   }
 
-  .counter {
-    float: right;
-    color: white;
-  }
 
-  .too-long {
-    color: #C14242;
-  }
+}
 
-  .warning {
-    font-size: 0.75em;
-    color: #C14242;
-    font-weight: 700;
-    margin-left: 10px;
-    display: none;
-  }
+.text-inputs {
+  width: 90%;
+  margin: 0 0 15px 0;
 }

@@ -4,97 +4,93 @@
 
 article.tweet {
   border-radius: 5px;
-  border: 1px solid #00a087;
+  border: 1px solid $main-color;
   overflow: hidden;
   margin-bottom: 20px;
-}
 
-article.tweet header {
-  background-color: #00a087;
-  color: #ffffff;
-  overflow: auto;
-  padding: 5px;
-}
+  header {
+    background-color: $main-color;
+    color: #ffffff;
+    overflow: auto;
+    padding: 5px;
 
-article.tweet header .avatar {
-  margin: 5px;
-  height: 50px;
-  width: 50px;
-  float: left;
-  border-radius: 3px;
-}
+    .avatar {
+      margin: 5px;
+      height: 50px;
+      width: 50px;
+      float: left;
+      border-radius: 3px;
+    }
 
-article.tweet header .author {
-  font-size: 2em;
-  font-weight: 700;
-  float: left;
-}
+    .author {
+      font-size: 2em;
+      font-weight: 700;
+      float: left;
+    }
 
-article.tweet header .username {
-  float: right;
-  font-size: 0.75em;
-  margin: 5px 2px;
-}
+    .username {
+      float: right;
+      font-size: 0.75em;
+      margin: 5px 2px;
+    }
+  }
 
-article.tweet section {
-  padding: 10px;
-  margin: 0px;
-}
+  section {
+    padding: 10px;
+    margin: 0px;
+  }
 
-article.tweet footer {
-  border-top: 1px solid #00a087;
-  padding: 10px;
-  font-size: 0.5em;
-  color: #00a087;
-  height: 40px;
-}
+  footer {
+    border-top: 1px solid $main-color;
+    padding: 10px;
+    font-size: 0.5em;
+    color: $main-color;
+    height: 40px;
 
-article.tweet footer .timestamp .time-date {
-  display: none;
-}
+    .timestamp .time-date {
+      display: none;
+    }
 
-article.tweet footer .timestamp .time-since {
+    .timestamp .time-since {
 
-}
+    }
 
+    .icons {
+      display: none;
+      margin-top: 2px;
+      float: right;
 
-article.tweet footer .icons {
-  display: none;
-  margin-top: 2px;
-  float: right;
-}
+      i {
+        margin-right: 3px;
 
-article.tweet footer .icons i {
-  margin-right: 3px;
-}
-
-article.tweet:hover footer .icons {
-  display: inherit;
+        &:hover {
+          cursor: pointer;
+          color: red;
+        }
+      }
+    }
+  }
 }
 
 article.tweet:hover {
-  border: 3px solid #00a087;
+  border: 3px solid $main-color;
   margin-bottom: 18px;
-}
 
-article.tweet:hover footer {
-  border-top: 3px solid #00a087;
-}
+  header {
+    padding: 3px 3px 5px 3px;
+  }
 
-article.tweet:hover header {
-  padding: 3px 3px 5px 3px;
-}
+  section {
+    padding: 10px 8px 10px 8px;
+  }
 
-article.tweet:hover section {
-  padding: 10px 8px 10px 8px;
-}
+  footer {
+    border-top: 3px solid $main-color;
+    padding: 8px 8px 8px 8px;
 
-article.tweet:hover footer {
-  padding: 8px 8px 8px 8px;
-}
-
-.icons i:hover {
-  color: red;
-  cursor: pointer;
+    .icons {
+      display: inherit;
+    }
+  }
 }
 

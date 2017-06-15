@@ -3,73 +3,72 @@
   top: 0;
   height: 80px;
   width: 100%;
-  background-color: #00a087;
+  background-color: $main-color;
   color: #FFFFFF;
   padding-left: 2em;
   padding-right: 2em;
   z-index: 1;
-}
 
-#nav-bar .nav-header {
-  float: left;
-  width: 20%;
-}
-
-#nav-bar .logo {
-  width: 80px;
-  height: 80px;
-}
-
-#nav-bar .header {
-  position: fixed;
-  top: 0;
-  font-size: 2em;
-  margin-left: 10px;
-  line-height: 80px;
+  .nav-header {
+    float: left;
+    width: 20%;
   }
 
-#nav-bar .nav-inputs {
-  height: 100%;
-  width: 80%;
-  display: table;
-}
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
 
-#nav-bar .nav-inputs .login-controls {
-  float: right;
-}
+  .header {
+    position: fixed;
+    top: 0;
+    font-size: 2em;
+    margin-left: 10px;
+    line-height: 80px;
+  }
 
-#nav-bar .nav-inputs button {
-  height: 50px;
-  width: 100px;
-  margin: 15px 15px 15px 0px;
-  background-color: #FFFFFF;
-  border: 0;
-  border-radius: 2px;
-}
+  .nav-inputs {
+    height: 100%;
+    width: 80%;
+    display: table;
 
-#nav-bar .nav-inputs button:hover {
-  color: #00a087;
-  outline: -webkit-focus-ring-color auto 5px;
-  outline-offset: -1px;
-  outline-color: rgba(170, 237, 204, 0.2);
-}
+    .login-controls {
+      float: right;
+    }
 
-#nav-bar .nav-inputs button i{
-  margin-right: 3px;
-}
+    button {
+      height: 50px;
+      width: 100px;
+      margin: 15px 15px 15px 0px;
+      background-color: #FFFFFF;
+      border: 0;
+      border-radius: 2px;
 
-#nav-bar .nav-inputs input {
-  width: 200px;
-  height: 25px;
-  margin-right: 15px;
-  border: 0;
-  border-radius: 2px;
-}
+      &:hover {
+        color: $main-color;
+        outline: -webkit-focus-ring-color auto 5px;
+        outline-offset: -1px;
+        outline-color: rgba(170, 237, 204, 0.2);
+      }
 
-#nav-bar .nav-inputs input:hover {
-  outline-offset: -2px;
-  outline: -webkit-focus-ring-color auto 5px;
-}
+      i {
+        margin-right: 3px;
+      }
+    }
 
+    input {
+      width: 200px;
+      height: 25px;
+      margin-right: 15px;
+      border: 0;
+      border-radius: 2px;
+
+      &:hover {
+        outline-offset: -2px;
+        outline: -webkit-focus-ring-color auto 5px;
+      }
+    }
+  }
+}
 
 .invert {-webkit-filter: invert(100%); filter: invert(100%);}

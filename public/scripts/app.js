@@ -121,15 +121,15 @@ const timestampToggle = () => {
 }
 
 const deleteButtonHandler = () => {
+  //when trash can icon is clicked, find that tweet and associated tweetID
   $("#tweets").on("click", ".fa-trash", function () {
     const tweet = $(this).closest(".tweet");
     const tweetID = tweet.data("tweetid");
-
+    //DELETE request to /tweets/tweetID, on success remove the tweet from the page
     $.ajax({
       url: `/tweets/${tweetID}`,
       method: "DELETE",
       success: function () {
-        console.log("Browser thinks it works");
         tweet.remove();
       }
     });
