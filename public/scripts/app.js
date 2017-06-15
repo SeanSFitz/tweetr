@@ -122,13 +122,15 @@ const timestampToggle = () => {
 
 const deleteButtonHandler = () => {
   $("#tweets").on("click", ".fa-trash", function () {
-    const tweetID = $(this).closest(".tweet").data("tweetid");
+    const tweet = $(this).closest(".tweet");
+    const tweetID = tweet.data("tweetid");
 
     $.ajax({
       url: `/tweets/${tweetID}`,
       method: "DELETE",
       success: function () {
         console.log("Browser thinks it works");
+        tweet.remove();
       }
     });
   });

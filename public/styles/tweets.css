@@ -92,3 +92,8 @@ article.tweet:hover footer {
   padding: 8px 8px 8px 8px;
 }
 
+.icons i:hover {
+  color: red;
+  cursor: pointer;
+}
+
