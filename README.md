@@ -22,8 +22,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 
 ## Final Product
-![index](https://github.com/SeanSFitz/tiny-app/blob/master/Screen%20Shot%202017-06-09%20at%202.49.55%20PM.png "Index")
-
+![compose full](https://github.com/SeanSFitz/tweetr/blob/master/screenshots/Compose%20Full%20Screen.png "Compose Full Screen")
+!![logged in](https://github.com/SeanSFitz/tweetr/blob/master/screenshots/Logged%20In%20Full%20Screen.png "Logged In Full Screen")
+!![logged out](https://github.com/SeanSFitz/tweetr/blob/master/screenshots/Logged%20Out%20Full%20Screen.png "Logged Out Full Screen")
+!![registration](https://github.com/SeanSFitz/tweetr/blob/master/screenshots/Register%20Full%20Screen.png "Registration")
+!![small screen](https://github.com/SeanSFitz/tweetr/blob/master/screenshots/Small%20Screen%20Compose.png "Small Screen")
 
 
 
