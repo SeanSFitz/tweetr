@@ -1,0 +1,153 @@
+@media (max-width: 1075px) {
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+//  height: 80px;
+  width: 100%;
+  min-width: 680px;
+  background-color: $main-color;
+  color: #FFFFFF;
+  padding-left: 2em;
+  padding-right: 2em;
+  z-index: 1;
+  //overflow: auto;
+
+  .nav-header {
+    float: left;
+    height: 80px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    float: left;
+  }
+
+  .header {
+    //position: fixed;
+    top: 0;
+    font-size: 2em;
+    margin-left: 10px;
+    line-height: 80px;
+  }
+
+  .hidden-small {
+    display: none;
+  }
+
+  .show-small {
+    position: fixed;
+    top: 8px;
+    right: 20px;
+    margin-left: 600px;
+    // float: right;
+    // margin-top: 8px;
+  }
+
+  button {
+  height: 25px;
+  width: 100%;
+  margin: 15px 0px 15px 0px;
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: 2px;
+
+    &:hover {
+      color: $main-color;
+      outline: -webkit-focus-ring-color auto 5px;
+      outline-offset: -1px;
+      outline-color: rgba(170, 237, 204, 0.2);
+    }
+
+    i {
+      margin-right: 3px;
+    }
+  }
+
+  #compose {
+    width: 100px;
+    height: 50px;
+    margin-left: 20px;
+    display: inline-block;
+    float: left;
+  }
+
+  .nav-inputs {
+    height: 100%;
+    margin-left: 20px;
+    padding: 15px;
+    float: right;
+
+
+    .login-controls {
+      //float: right;
+      //order: 3;
+      // display: flex;
+      // flex-direction: column;
+    }
+
+    .logged-in {
+
+      display: none;
+
+      .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 3px;
+        // //float: left;
+        // margin-top: 10px;
+        // margin-right: 15px;
+        border: 1px solid white;
+      }
+
+      span {
+        // //float: left;
+        // margin-top: 30px;
+        // margin-right: 15px;
+      }
+    }
+
+
+    .logged-out {
+      //display: none;
+    }
+
+    button {
+      height: 25px;
+      width: 100%;
+      margin: 15px 0px 15px 0px;
+      background-color: #FFFFFF;
+      border: 0;
+      border-radius: 2px;
+
+      &:hover {
+        color: $main-color;
+        outline: -webkit-focus-ring-color auto 5px;
+        outline-offset: -1px;
+        outline-color: rgba(170, 237, 204, 0.2);
+      }
+
+      i {
+        margin-right: 3px;
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 25px;
+      margin: 15px 0px 15px 0px;
+      border: 0;
+      border-radius: 2px;
+
+      &:hover {
+        outline-offset: -2px;
+        outline: -webkit-focus-ring-color auto 5px;
+      }
+    }
+  }
+
+}
+}
+
+.invert {-webkit-filter: invert(100%); filter: invert(100%);}

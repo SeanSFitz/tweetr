@@ -1,11 +1,10 @@
+@media (min-width: 1075px) {
 #nav-bar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   position: fixed;
   top: 0;
-  //height: 80px;
+  height: 80px;
   width: 100%;
+  min-width: 680px;
   background-color: $main-color;
   color: #FFFFFF;
   padding-left: 2em;
@@ -14,17 +13,18 @@
 
   .nav-header {
     //float: left;
-    width: 20%;
     height: 80px;
     order: 1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: inline-block;
+    float: left;
+    // flex-direction: row;
+    // flex-wrap: wrap;
   }
 
   .logo {
     width: 80px;
     height: 80px;
+    float: left;
   }
 
   .header {
@@ -35,39 +35,59 @@
     line-height: 80px;
   }
 
-  .nav-inputs {
-    height: 100%;
-    width: 80%;
-    order: 2;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  button {
+    height: 50px;
+    width: 100px;
+    margin: 15px 15px 15px 0px;
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: 2px;
 
-    #compose {
-      //order: 2;
+    &:hover {
+      color: $main-color;
+      outline: -webkit-focus-ring-color auto 5px;
+      outline-offset: -1px;
+      outline-color: rgba(170, 237, 204, 0.2);
     }
 
+    i {
+      margin-right: 3px;
+    }
+  }
+
+  #compose {
+    margin-left: 20px;
+    float: left;
+  }
+
+
+  .nav-inputs {
+    height: 100%;
+    margin-left: 20px;
+    float: right;
+
+
     .login-controls {
-      //float: right;
-      //order: 3;
     }
 
     .logged-in {
 
       display: none;
+      //float: right;
+
 
       .avatar {
         width: 60px;
         height: 60px;
         border-radius: 3px;
-        //float: left;
+        float: left;
         margin-top: 10px;
         margin-right: 15px;
         border: 1px solid white;
       }
 
       span {
-        //float: left;
+        float: left;
         margin-top: 30px;
         margin-right: 15px;
       }
@@ -78,25 +98,6 @@
       //display: none;
     }
 
-    button {
-      height: 50px;
-      width: 100px;
-      margin: 15px 15px 15px 0px;
-      background-color: #FFFFFF;
-      border: 0;
-      border-radius: 2px;
-
-      &:hover {
-        color: $main-color;
-        outline: -webkit-focus-ring-color auto 5px;
-        outline-offset: -1px;
-        outline-color: rgba(170, 237, 204, 0.2);
-      }
-
-      i {
-        margin-right: 3px;
-      }
-    }
 
     input {
       width: 200px;
@@ -111,6 +112,11 @@
       }
     }
   }
+
 }
 
+.show-small {
+  display: none;
+}
+}
 .invert {-webkit-filter: invert(100%); filter: invert(100%);}

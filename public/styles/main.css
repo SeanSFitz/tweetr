@@ -4,7 +4,8 @@
  * Do not modify these two selectors, please
  */
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  min-width: 680px; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -24,76 +25,79 @@ body {
   margin: 0 auto;
   padding: 100px 0 30px; }
 
-#nav-bar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #1F7698;
-  color: #FFFFFF;
-  padding-left: 2em;
-  padding-right: 2em;
-  z-index: 1; }
-  #nav-bar .nav-header {
-    width: 20%;
-    height: 80px;
-    order: 1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; }
-  #nav-bar .logo {
-    width: 80px;
-    height: 80px; }
-  #nav-bar .header {
+@media (min-width: 1075px) {
+  #nav-bar {
+    position: fixed;
     top: 0;
-    font-size: 2em;
-    margin-left: 10px;
-    line-height: 80px; }
-  #nav-bar .nav-inputs {
-    height: 100%;
-    width: 80%;
-    order: 2;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; }
-    #nav-bar .nav-inputs .logged-in {
-      display: none; }
-      #nav-bar .nav-inputs .logged-in .avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 3px;
-        margin-top: 10px;
-        margin-right: 15px;
-        border: 1px solid white; }
-      #nav-bar .nav-inputs .logged-in span {
-        margin-top: 30px;
-        margin-right: 15px; }
-    #nav-bar .nav-inputs button {
+    height: 80px;
+    width: 100%;
+    min-width: 680px;
+    background-color: #1F7698;
+    color: #FFFFFF;
+    padding-left: 2em;
+    padding-right: 2em;
+    z-index: 1; }
+    #nav-bar .nav-header {
+      height: 80px;
+      order: 1;
+      display: inline-block;
+      float: left; }
+    #nav-bar .logo {
+      width: 80px;
+      height: 80px;
+      float: left; }
+    #nav-bar .header {
+      top: 0;
+      font-size: 2em;
+      margin-left: 10px;
+      line-height: 80px; }
+    #nav-bar button {
       height: 50px;
       width: 100px;
       margin: 15px 15px 15px 0px;
       background-color: #FFFFFF;
       border: 0;
       border-radius: 2px; }
-      #nav-bar .nav-inputs button:hover {
+      #nav-bar button:hover {
         color: #1F7698;
         outline: -webkit-focus-ring-color auto 5px;
         outline-offset: -1px;
         outline-color: rgba(170, 237, 204, 0.2); }
-      #nav-bar .nav-inputs button i {
+      #nav-bar button i {
         margin-right: 3px; }
-    #nav-bar .nav-inputs input {
-      width: 200px;
-      height: 25px;
-      margin-right: 15px;
-      border: 0;
-      border-radius: 2px; }
-      #nav-bar .nav-inputs input:hover {
-        outline-offset: -2px;
-        outline: -webkit-focus-ring-color auto 5px; }
+    #nav-bar #compose {
+      margin-left: 20px;
+      float: left; }
+    #nav-bar .nav-inputs {
+      height: 100%;
+      margin-left: 20px;
+      float: right; }
+      #nav-bar .nav-inputs .logged-in {
+        display: none; }
+        #nav-bar .nav-inputs .logged-in .avatar {
+          width: 60px;
+          height: 60px;
+          border-radius: 3px;
+          float: left;
+          margin-top: 10px;
+          margin-right: 15px;
+          border: 1px solid white; }
+        #nav-bar .nav-inputs .logged-in span {
+          float: left;
+          margin-top: 30px;
+          margin-right: 15px; }
+      #nav-bar .nav-inputs input {
+        width: 200px;
+        height: 25px;
+        margin-right: 15px;
+        border: 0;
+        border-radius: 2px; }
+        #nav-bar .nav-inputs input:hover {
+          outline-offset: -2px;
+          outline: -webkit-focus-ring-color auto 5px; }
 
+  .show-small {
+    display: none; } }
 .invert {
   -webkit-filter: invert(100%);
   filter: invert(100%); }
@@ -231,5 +235,94 @@ article.tweet:hover {
 .text-inputs {
   width: 90%;
   margin: 0 0 15px 0; }
+
+@media (max-width: 1075px) {
+  #nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-width: 680px;
+    background-color: #1F7698;
+    color: #FFFFFF;
+    padding-left: 2em;
+    padding-right: 2em;
+    z-index: 1; }
+    #nav-bar .nav-header {
+      float: left;
+      height: 80px; }
+    #nav-bar .logo {
+      width: 80px;
+      height: 80px;
+      float: left; }
+    #nav-bar .header {
+      top: 0;
+      font-size: 2em;
+      margin-left: 10px;
+      line-height: 80px; }
+    #nav-bar .hidden-small {
+      display: none; }
+    #nav-bar .show-small {
+      position: fixed;
+      top: 8px;
+      right: 20px;
+      margin-left: 600px; }
+    #nav-bar button {
+      height: 25px;
+      width: 100%;
+      margin: 15px 0px 15px 0px;
+      background-color: #FFFFFF;
+      border: 0;
+      border-radius: 2px; }
+      #nav-bar button:hover {
+        color: #1F7698;
+        outline: -webkit-focus-ring-color auto 5px;
+        outline-offset: -1px;
+        outline-color: rgba(170, 237, 204, 0.2); }
+      #nav-bar button i {
+        margin-right: 3px; }
+    #nav-bar #compose {
+      width: 100px;
+      height: 50px;
+      margin-left: 20px;
+      display: inline-block;
+      float: left; }
+    #nav-bar .nav-inputs {
+      height: 100%;
+      margin-left: 20px;
+      padding: 15px;
+      float: right; }
+      #nav-bar .nav-inputs .logged-in {
+        display: none; }
+        #nav-bar .nav-inputs .logged-in .avatar {
+          width: 60px;
+          height: 60px;
+          border-radius: 3px;
+          border: 1px solid white; }
+      #nav-bar .nav-inputs button {
+        height: 25px;
+        width: 100%;
+        margin: 15px 0px 15px 0px;
+        background-color: #FFFFFF;
+        border: 0;
+        border-radius: 2px; }
+        #nav-bar .nav-inputs button:hover {
+          color: #1F7698;
+          outline: -webkit-focus-ring-color auto 5px;
+          outline-offset: -1px;
+          outline-color: rgba(170, 237, 204, 0.2); }
+        #nav-bar .nav-inputs button i {
+          margin-right: 3px; }
+      #nav-bar .nav-inputs input {
+        width: 100%;
+        height: 25px;
+        margin: 15px 0px 15px 0px;
+        border: 0;
+        border-radius: 2px; }
+        #nav-bar .nav-inputs input:hover {
+          outline-offset: -2px;
+          outline: -webkit-focus-ring-color auto 5px; } }
+.invert {
+  -webkit-filter: invert(100%);
+  filter: invert(100%); }
 
 /*# sourceMappingURL=main.css.map */
