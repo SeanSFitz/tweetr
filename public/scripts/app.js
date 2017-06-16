@@ -107,11 +107,6 @@ const displayWarning = (warning) => {
    }, 3000);
 }
 
-const appendLatest = (tweet) => {
-  //append the just created tweet to the top of the tweets container
-  $("#tweets").prepend(createTweetElement(tweet));
-}
-
 const loadTweets = () => {
   //fetch all tweets from server and call render tweets function upon success
   $.ajax({
