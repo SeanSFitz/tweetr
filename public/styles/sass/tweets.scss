@@ -1,5 +1,5 @@
 #tweets {
-  margin: 30px 2em 10px 2em;
+  margin: 0px 2em 10px 2em;
 }
 
 article.tweet {
@@ -20,6 +20,7 @@ article.tweet {
       width: 50px;
       float: left;
       border-radius: 3px;
+      border: 1px solid white;
     }
 
     .author {
@@ -57,9 +58,18 @@ article.tweet {
     }
 
     .icons {
-      display: none;
+      // display: none;
       margin-top: 2px;
+      display: table;
       float: right;
+
+      .other-icons {
+        display: none;
+      }
+
+      .likes {
+
+      }
 
       i {
         margin-right: 3px;
@@ -90,7 +100,10 @@ article.tweet:hover {
     padding: 8px 8px 8px 8px;
 
     .icons {
-      display: inherit;
+
+      .other-icons {
+        display: table-cell;
+      }
     }
   }
 }

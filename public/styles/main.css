@@ -60,7 +60,8 @@ body {
         border-radius: 3px;
         float: left;
         margin-top: 10px;
-        margin-right: 15px; }
+        margin-right: 15px;
+        border: 1px solid white; }
       #nav-bar .nav-inputs .logged-in span {
         float: left;
         margin-top: 30px;
@@ -97,6 +98,7 @@ body {
   background-color: #1F7698;
   margin-right: 2em;
   margin-left: 2em;
+  margin-bottom: 20px;
   border-radius: 5pt;
   padding: 5pt;
   display: none; }
@@ -133,7 +135,7 @@ body {
     display: none; }
 
 #tweets {
-  margin: 30px 2em 10px 2em; }
+  margin: 0px 2em 10px 2em; }
 
 article.tweet {
   border-radius: 5px;
@@ -150,7 +152,8 @@ article.tweet {
       height: 50px;
       width: 50px;
       float: left;
-      border-radius: 3px; }
+      border-radius: 3px;
+      border: 1px solid white; }
     article.tweet header .author {
       font-size: 2em;
       font-weight: 700;
@@ -172,9 +175,11 @@ article.tweet {
     article.tweet footer .timestamp .time-date {
       display: none; }
     article.tweet footer .icons {
-      display: none;
       margin-top: 2px;
+      display: table;
       float: right; }
+      article.tweet footer .icons .other-icons {
+        display: none; }
       article.tweet footer .icons i {
         margin-right: 3px; }
         article.tweet footer .icons i:hover {
@@ -191,13 +196,14 @@ article.tweet:hover {
   article.tweet:hover footer {
     border-top: 3px solid #1F7698;
     padding: 8px 8px 8px 8px; }
-    article.tweet:hover footer .icons {
-      display: inherit; }
+    article.tweet:hover footer .icons .other-icons {
+      display: table-cell; }
 
 #registration {
   background-color: #1F7698;
   margin-right: 2em;
   margin-left: 2em;
+  margin-bottom: 20px;
   border-radius: 5pt;
   padding: 5pt;
   text-align: center;
