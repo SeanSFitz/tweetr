@@ -36,12 +36,18 @@
         <div class="login-controls">
           <div class="logged-out">
             <form action="/users/login" method="POST">
-              <input class="" type="username" type="text" name="loginUsername" placeholder="Username">
-              <input class="" type="password" type="text" name="loginPassword" placeholder="Password">
+              <input id="loginUsername" type="username" type="text" name="loginUsername" placeholder="Username">
+              <input id="loginPassword" type="password" type="text" name="loginPassword" placeholder="Password">
               <button id="login-nav" type="submit">Login</button>
               <button id="register-nav">Register</button>
             </form>
           </div>
+          <div class="logged-in">
+              <span></span>
+              <img class="avatar" src=""></img>
+              <button id="logout-nav" type="submit">Logout</button>
+          </div>
+
         </div>
       </div>
     </nav>

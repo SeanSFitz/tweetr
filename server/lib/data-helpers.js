@@ -31,6 +31,14 @@ module.exports = function makeDataHelpers(db) {
       });
     },
 
+    likeTweet: function(tweetID, userID, callback) {
+      db.collection("tweets").findOneAndUpdate({_id: ObjectId(tweetID)}, {$addToSet: {likes: userID}}, callback);
+    },
+
+    unlikeTweet: function(tweetID, userID, callback) {
+      db.collection("tweets").findOneAndUpdate({_id: ObjectId(tweetID)}, {$pull: {likes: userID}}, callback);
+    },
+
     addUser: function(newUser, callback) {
       db.collection("users").insertOne(newUser, (err) => {
         callback(err);

@@ -28,6 +28,7 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
+        req.session.user = user;
         res.status(201).send(user);
       }
     });
@@ -41,9 +42,18 @@ module.exports = function(DataHelpers) {
       }
 
       if (bcrypt.compareSync(req.body.loginPassword, user.password)) {
-        res.status(201).send(user);
+        let userInfo = Object.assign({}, user);
+        delete userInfo.password;
+        req.session.user = userInfo;
+        res.status(201).send(userInfo);
       }
     });
+  });
+
+  userRoutes.post("/logout", function (req, res) {
+    console.log("trying to logout");
+    req.session = null;
+    res.status(201).send();
   });
 
   userRoutes.delete("/:userID", function(req, res) {

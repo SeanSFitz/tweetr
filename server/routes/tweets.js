@@ -24,7 +24,7 @@ module.exports = function(DataHelpers) {
       return;
     }
 
-    const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
+    const user = req.session.user ? req.session.user : userHelper.generateRandomUser();
     const tweet = {
       user: user,
       content: {
@@ -51,6 +51,39 @@ module.exports = function(DataHelpers) {
       }
     });
   });
+
+  tweetsRoutes.put("/like/:tweetID", function (req, res) {
+    //check if user is logged in
+    if (!req.session.user) {
+      res.status(500).json({error: "Only logged in users can like tweets."});
+      return;
+    }
+
+    DataHelpers.likeTweet(req.params.tweetID, req.session.user._id, (err, tweet) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(201).send();
+      }
+    })
+  });
+
+  tweetsRoutes.put("/unlike/:tweetID", function (req, res) {
+    //check if user is logged in
+    if (!req.session.user) {
+      res.status(500).json({error: "Only logged in users can unlike tweets."});
+      return;
+    }
+
+    DataHelpers.unlikeTweet(req.params.tweetID, req.session.user._id, (err, tweet) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(201).send();
+      }
+    })
+  });
+
 
   return tweetsRoutes;
 

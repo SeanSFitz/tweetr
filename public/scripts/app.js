@@ -1,12 +1,13 @@
 const createTweetElement = (tweet) => {
   //create new tweet article element, create the header, body and footer and append all to article
-  let $tweet = $(`<article data-tweetID="${tweet._id}">`).addClass("tweet");
+  let $tweet = $(`<article data-tweetID="${tweet._id}" data-userID="${tweet.user._id}" data-likes="${tweet.likes}">`)
+    .addClass("tweet");
 
   //header
   let tweetHeader = $("<header>").append(`
     <img class="avatar" src="${tweet.user.avatars.small}">
     <span class="author">${tweet.user.name}</span>
-    <span class="username">${tweet.user.handle}</span>
+    <span class="username">@${tweet.user.handle}</span>
   `);
 
   //body
@@ -108,6 +109,9 @@ const composeToggle = () => {
   $("#compose").on("click", function () {
     $(".new-tweet").toggle({
       duration: 500,
+      start: () => {
+        $("#registration").is(":hidden") ? '' : $("#registration").toggle() ;
+      },
       done: () => {
         $(".new-tweet").is(":hidden") ? '' : $(".new-tweet textarea").focus() ;
       }
@@ -142,12 +146,59 @@ const deleteButtonHandler = () => {
   });
 }
 
+const likeButtonHandler = () => {
+  //when heart can icon is clicked, find that tweet and associated tweetID
+  $("#tweets").on("click", ".fa-heart", function () {
+    const tweet = $(this).closest(".tweet");
+    const tweetID = tweet.data("tweetid");
+
+    const userID = tweet.data("userid");
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+    if (userID === userInfo._id) {
+      return;
+    }
+
+    if (tweet.data("likes").indexOf(userInfo._id) >= 0) {
+      console.log("Browser trying to unlike");
+      unlikeTweet(tweetID);
+    } else {
+      console.log("Browser trying to like");
+      likeTweet(tweetID);
+    }
+  });
+}
+
+const likeTweet = (tweetID) => {
+  //PUT request to /tweets/like/tweetID, on success update like counter
+  $.ajax({
+    url: `/tweets/like/${tweetID}`,
+    method: "PUT",
+    success: function () {
+      console.log("Browser thinks it works");
+
+    }
+  });
+}
+
+const unlikeTweet = (tweetID) => {
+  //PUT request to /tweets/unlike/tweetID, on success update like counter
+  $.ajax({
+    url: `/tweets/unlike/${tweetID}`,
+    method: "PUT",
+    success: function () {
+      console.log("Browser thinks it works");
+    }
+  });
+}
+
 $(document).ready(() => {
   loadTweets();
   formSubmitHandler();
   composeToggle();
   timestampToggle();
   deleteButtonHandler();
+  likeButtonHandler();
 
   //setInterval(loadTweets, 2000);
 });
