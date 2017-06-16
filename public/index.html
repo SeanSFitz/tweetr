@@ -4,7 +4,7 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
+]    <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet">
     <script src="https://use.fontawesome.com/4f8706f5c4.js"></script>
@@ -31,25 +31,30 @@
         <a href="/"><img class="logo invert" src="/images/bird.png"></a>
         <span class="header">Tweeter</span>
       </div>
+      <button id="compose"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Compose</button>
       <div class="nav-inputs">
-        <button id="compose"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Compose</button>
-        <div class="login-controls">
-          <div class="logged-out">
-            <form action="/users/login" method="POST">
-              <input id="loginUsername" type="username" type="text" name="loginUsername" placeholder="Username">
-              <input id="loginPassword" type="password" type="text" name="loginPassword" placeholder="Password">
-              <button id="login-nav" type="submit">Login</button>
-              <button id="register-nav">Register</button>
-            </form>
-          </div>
-          <div class="logged-in">
+        <div id="hidden-small" class="hidden-small">
+          <div class="login-controls">
+            <div class="logged-out">
+              <form action="/users/login" method="POST">
+                <input id="loginUsername" type="username" type="text" name="loginUsername" placeholder="Username">
+                <input id="loginPassword" type="password" type="text" name="loginPassword" placeholder="Password">
+                <button id="login-nav" type="submit">Login</button>
+                <button id="register-nav">Register</button>
+              </form>
+            </div>
+            <div class="logged-in">
               <span></span>
               <img class="avatar" src=""></img>
               <button id="logout-nav" type="submit">Logout</button>
+            </div>
           </div>
-
         </div>
       </div>
+        <div class="show-small">
+          <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
+        </div>
+
     </nav>
 
     <!-- Page-specific (main) content here -->

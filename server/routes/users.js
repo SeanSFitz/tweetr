@@ -8,9 +8,6 @@ const userRoutes  = express.Router();
 
 module.exports = function(DataHelpers) {
 
-  userRoutes.get("/", function(req, res) {
-  });
-
   userRoutes.post("/register", function(req, res) {
     //code to format user here
     let user = {
@@ -35,29 +32,35 @@ module.exports = function(DataHelpers) {
   });
 
   userRoutes.post("/login", function(req, res) {
+    //attempts to log user in, sends back user info to store in local storage and sets cookie-session
 
     DataHelpers.getUser(req.body.loginUsername, (err, user) => {
       if (err) {
         res.status(500).json({ error: err.message });
       }
-
+      if (!user) {
+        res.status(500).json({ error: "user not found"});
+        return;
+      }
+      //compares provided password to stored hashed password and send back userinfo if it matches
       if (bcrypt.compareSync(req.body.loginPassword, user.password)) {
         let userInfo = Object.assign({}, user);
         delete userInfo.password;
         req.session.user = userInfo;
         res.status(201).send(userInfo);
+      } else {
+        res.status(500).json( {error: "incorrect password" });
       }
     });
   });
 
+
   userRoutes.post("/logout", function (req, res) {
-    console.log("trying to logout");
+    //logs user out by destroying session data
     req.session = null;
     res.status(201).send();
   });
 
-  userRoutes.delete("/:userID", function(req, res) {
-  });
 
   return userRoutes;
 

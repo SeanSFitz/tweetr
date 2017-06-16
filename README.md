@@ -12,6 +12,23 @@ This repository is the starter code for the project: Students will fork and clon
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
+*bcrypt
+*body-parser
+*chance
+*cookie-session
+*express
+*md5
+*mongodb
 
-- Express
-- Node 5.10.x or above
+
+## Final Product
+![index](https://github.com/SeanSFitz/tiny-app/blob/master/Screen%20Shot%202017-06-09%20at%202.49.55%20PM.png "Index")
+
+
+
+
+
+## Getting Started
+* Install all dependencies with the command "npm install"
+* Run the development server with the command "npm start"
+* Connect at "http://localhost:8080/"
