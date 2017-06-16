@@ -89,7 +89,16 @@ const logoutButton = () => {
   })
 }
 
+const checkLogin = () => {
+  //checks if the user has a saved session in local storage and if so, calls the nav-login toggle function
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  if (userInfo) {
+    navLogin(userInfo);
+  }
+}
+
 $(document).ready(() => {
+  checkLogin();
   registerButtonHandler();
   registerFormHandler();
   loginFormHandler();

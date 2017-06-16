@@ -15,6 +15,7 @@ const createTweetElement = (tweet) => {
 
   //footer
   let dateCreated = new Date(tweet.created_at);
+  let likes = tweet.likes ? tweet.likes.length : 0;
   let tweetFooter = $("<footer>").append(`
       <span class="timestamp">
         <span class="time-since">${moment(dateCreated).fromNow()}</span>
@@ -25,6 +26,7 @@ const createTweetElement = (tweet) => {
           <i class="fa fa-flag fa-2x" aria-hidden="true"></i>
           <i class="fa fa-retweet fa-2x" aria-hidden="true"></i>
           <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+          <span class="like-count">${likes}</span>
       </span>
   `);
 
@@ -176,7 +178,6 @@ const likeTweet = (tweetID) => {
     method: "PUT",
     success: function () {
       console.log("Browser thinks it works");
-
     }
   });
 }
