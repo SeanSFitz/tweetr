@@ -4,6 +4,14 @@ Tweeter is a simple, single-page Twitter clone.
 
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
 
+##Stretch Goals Completed
+* Converted to Sass
+* User login and registration
+* Liking tweets with user-specific restrictions
+* Delete your own tweets
+* Responsive design (somewhat...)
+
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
@@ -12,13 +20,13 @@ This repository is the starter code for the project: Students will fork and clon
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
-*bcrypt
-*body-parser
-*chance
-*cookie-session
-*express
-*md5
-*mongodb
+* bcrypt
+* body-parser
+* chance
+* cookie-session
+* express
+* md5
+* mongodb
 
 
 ## Final Product
@@ -27,11 +35,3 @@ This repository is the starter code for the project: Students will fork and clon
 !![logged out](https://github.com/SeanSFitz/tweetr/blob/master/screenshots/Logged%20Out%20Full%20Screen.png "Logged Out Full Screen")
 !![registration](https://github.com/SeanSFitz/tweetr/blob/master/screenshots/Register%20Full%20Screen.png "Registration")
 !![small screen](https://github.com/SeanSFitz/tweetr/blob/master/screenshots/Small%20Screen%20Compose.png "Small Screen")
-
-
-
-
-## Getting Started
-* Install all dependencies with the command "npm install"
-* Run the development server with the command "npm start"
-* Connect at "http://localhost:8080/"
